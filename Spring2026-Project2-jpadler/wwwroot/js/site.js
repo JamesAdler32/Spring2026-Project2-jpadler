@@ -1,4 +1,9 @@
-﻿const API_KEY = "INSERT KEY";
+﻿let API_KEY = "";
+
+fetch("key.txt")
+    .then(response => response.text())
+    .then(text => {API_KEY = text;});
+
 
 const requestOptions = {
     method: "GET",
@@ -18,10 +23,9 @@ const bg_imgs = [
 ];
 
 async function fetch_query_json(query) {
-    const URI = `https://google.serper.dev/search?q=${query}&apiKey=${API_KEY}`
+    const URI = `https://google.serper.dev/search?q=${encodeURIComponent(query)}&apiKey=${API_KEY}`
 
     try {
-        console.log(URI);
         const response = await fetch(URI, requestOptions);
         const result = await response.json();
         return result;
@@ -98,16 +102,20 @@ $(document).ready(function () {
                 $("#searchResults").append(search_div(title, link, desc));
             }
 
-            $("#searchResults").append(`<h1 class="searchHeader">People Also Ask:</h1 >`);
-            $("#searchResults").append(paa_div(data.peopleAlsoAsk));
-            $(".acord").accordion({
-                collapsible: true,
-                active: false,
-                heightStyle: "content",
-            });
+            if (data.peopleAlsoAsk) {
+                $("#searchResults").append(`<h1>People Also Ask:</h1>`);
+                $("#searchResults").append(paa_div(data.peopleAlsoAsk));
+                $(".acord").accordion({
+                    collapsible: true,
+                    active: false,
+                    heightStyle: "content",
+                });
+            }
 
-            $("#searchResults").append(`<h1 class="searchHeader">Related Searches:</h1 >`);
-            $("#searchResults").append(related_search_div(data.relatedSearches));
+            if (data.relatedSearches) {
+                $("#searchResults").append(`<h1>Related Searches:</h1>`);
+                $("#searchResults").append(related_search_div(data.relatedSearches));
+            }
         });
     });
 

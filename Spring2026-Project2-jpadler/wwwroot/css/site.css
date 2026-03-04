@@ -38,13 +38,24 @@ body {
     background-attachment: fixed;
 }
 
+.search_header {
+    background-color: white;
+    opacity: 0.8;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+}
+
 .search_div {
     background-color: white;
     opacity: 0.8;
     margin: 30px;
     padding: 10px;
     border-radius: 10px;
-    width: 30%;
+    width: 90%;
+    max-width: 800px;
 }
 
 .time {
@@ -59,7 +70,8 @@ body {
     margin: 30px;
     padding: 10px;
     border-radius: 10px;
-    width: 30%;
+    width: 90%;
+    max-width: 800px;
 }
 
 .related_search {
@@ -68,6 +80,7 @@ body {
     margin: 30px;
     padding: 10px;
     border-radius: 10px;
-    width: 30%;
     font-size: 150%;
+    width: 90%;
+    max-width: 800px;
 }
