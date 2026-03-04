@@ -2,9 +2,33 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Search Engine</title>
+
+    <!--Css-->
+    <link rel="stylesheet" href="css/site.css" />
+
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+
+    <!--Jquery UI-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/themes/smoothness/jquery-ui.css" integrity="sha384-IUy5/r9Ihkf8KKnMsd1BzkscCgiRNeS+JpJxqozy6rZVCGdsxhJ8an7uR6rtKqdG" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js" integrity="sha384-SStJQoPipVtHHnIgUfDI+jTAbSyU+HMbhwt2XRRNpLIRFg9VguopT6Y4+cdOlkqg" crossorigin="anonymous"></script>
 </head>
 <body>
-    <p>Hello World!</p>
+
+    <h1 id="title">Search Engine</h1>
+
+    <input type="text" id="query" name="query">
+    <button id="searchButton">Search</button>
+
+    <button id="timeButton">Display Time</button>
+
+    <button id="luckyButton">I'm Feeling Lucky</button>
+
+    <div id="searchResults"></div>
+    <div id="time"></div>
+
+    <script src="js/site.js"></script>
+
 </body>
 </html>
